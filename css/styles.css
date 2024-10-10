@@ -80,7 +80,7 @@ img {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navlink::after {
+.navlink:hover::after {
     content: "";
     width: 100%;
     position: absolute;
@@ -91,6 +91,11 @@ img {
     border-radius: 2px;
 }
 
+.current {
+    position: relative;
+    color: #404bbf;
+}
+
 .nav {
     display: flex;
     align-items: center;
@@ -98,7 +103,9 @@ img {
 
 
 .navlink:hover,
-.navlink:focus {
+.navlink:focus,
+.navlink:active {
+
     color: #404bbf;
 }
 
@@ -167,7 +174,7 @@ address {
     cursor: pointer;
     letter-spacing: 0.04em;
     margin-top: 40px;
-    transition: background-color 250ms cubic-bezier(0.4, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .opening-sect-btn:hover,
@@ -212,6 +219,23 @@ address {
     width: calc((100% - 72px) / 4);
 }
 
+.icon-container {
+    width: 264px;
+    height: 112px;
+    background-color: #F4F4FD;
+    margin-bottom: 8px;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    z-index: 99;
+    position: absolute;
+}
 
 
 .third-h {
@@ -250,8 +274,8 @@ address {
     background-color: #fff;
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-        0px 1px 1px rgba(46, 47, 66, 0.16),
-        0px 2px 1px rgba(46, 47, 66, 0.08);
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .team-container {
@@ -260,7 +284,8 @@ address {
 }
 
 .portf-sect {
-    padding: 120px 0 120px 0;
+    padding-top: 120px;
+    padding-bottom: 120px;
     
 }
 
@@ -269,22 +294,26 @@ address {
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 48px;
-    
+    justify-content: center;
 }
 
 .portf-element:hover {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-        0px 1px 1px rgba(46, 47, 66, 0.16),
-        0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
-.portf-element:hover .image-container-p {
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
     transform: translateY(0%);
 }
 
-.portf-list:first-child {
-    width: calc((100% - 48px) / 3);
+.portf-element:hover .image-container-p,
+.portf-element:focus .image-container-p {
+    transform: translateY(0);
 }
+
+.portf-element {
+    width: calc((100% - 48px) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 
 .portf-container {
     padding: 32px 16px;
@@ -300,15 +329,16 @@ address {
 
 .image-container-p {
     position: absolute;
-    top: 0;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #f4f4fd;
     padding: 40px 32px;
-    background-color: #4d5ae5;
-    height: 100%;
+    background-color: #4D5AE5;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -362,7 +392,7 @@ address {
     margin-bottom: 16px;
 }
 
-.social-media-ul {
+.footer .svg-list {
     display: flex;
     gap: 16px;
 }
@@ -383,13 +413,19 @@ address {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-media-a:hover,
-.social-media-a:focus {
+.footer .social-media-a:hover,
+.footer .social-media-a:focus {
     background-color: #31d0aa;
 }
 
-.svg-style {
-    fill: #f4f4fd;
-
-
+.svg-list {
+    display: flex;
+    gap: 24px;
+    padding-top: 8px;
+    justify-content: center;
 }
+
+.social-icon {
+    fill: #f4f4fd;
+}
+
